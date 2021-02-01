@@ -18,12 +18,11 @@ public class SetExample {
 
 		// TreeSet orders elements in natural order
 		Set<String> set1 = new TreeSet<String>();
-		
-		if(set1.isEmpty()) {
+
+		if (set1.isEmpty()) {
 			System.out.println("Set is empty");
 		}
-		
-		
+
 		set1.add("dog");
 		set1.add("cat");
 		set1.add("mouse");
@@ -35,8 +34,7 @@ public class SetExample {
 
 		System.out.println(set1);
 
-		
-		if(set1.isEmpty()) {
+		if (set1.isEmpty()) {
 			System.out.println("Set is empty");
 		}
 		/// iterate through set ///
@@ -44,16 +42,37 @@ public class SetExample {
 		for (String element : set1) {
 			System.out.println(element);
 		}
-
 		// does set contain a particular item
 
 		if (set1.contains("penguin")) {
 			System.out.println("Contains penguin");
 		}
-		
-		if(set1.contains("cat")) {
+
+		if (set1.contains("cat")) {
 			System.out.println("Contains cat");
 		}
+
+		
+		Set<String> set2 = new TreeSet<String>();
+
+		set2.add("dog");
+		set2.add("cat");
+		set2.add("giraffe");
+		set2.add("monkey");
+		set2.add("ant");
+
+		// Intersection of SET
+		Set<String> intersection = new HashSet<String>(set1);
+		System.out.println(intersection);
+		
+		intersection.retainAll(set2);
+		System.out.println(intersection);
+		
+		
+		// Difference of SET
+		Set<String> difference =  new HashSet<String>(set1);
+		difference.removeAll(set2);
+		System.out.println(difference);
 	}
 
 }
